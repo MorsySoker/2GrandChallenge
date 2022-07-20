@@ -12,6 +12,8 @@
 		1DB82B012888B2D2007B0C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82AFF2888B2D2007B0C32 /* LaunchScreen.storyboard */; };
 		1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B0F2888B786007B0C32 /* HomeViewController.swift */; };
 		1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82B102888B786007B0C32 /* HomeViewController.xib */; };
+		1DB82B162888BAE2007B0C32 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B142888BAE2007B0C32 /* NewsTableViewCell.swift */; };
+		1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82B152888BAE2007B0C32 /* NewsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		1DB82B022888B2D2007B0C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DB82B0F2888B786007B0C32 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1DB82B102888B786007B0C32 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		1DB82B142888BAE2007B0C32 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		1DB82B152888BAE2007B0C32 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +118,20 @@
 		1DB82B0E2888B765007B0C32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DB82B132888BABA007B0C32 /* NewsTableViewCell */,
 				1DB82B0F2888B786007B0C32 /* HomeViewController.swift */,
 				1DB82B102888B786007B0C32 /* HomeViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1DB82B132888BABA007B0C32 /* NewsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1DB82B142888BAE2007B0C32 /* NewsTableViewCell.swift */,
+				1DB82B152888BAE2007B0C32 /* NewsTableViewCell.xib */,
+			);
+			path = NewsTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +194,7 @@
 			files = (
 				1DB82B012888B2D2007B0C32 /* LaunchScreen.storyboard in Resources */,
 				1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */,
+				1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */,
 				1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +208,7 @@
 			files = (
 				1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */,
 				1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */,
+				1DB82B162888BAE2007B0C32 /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
