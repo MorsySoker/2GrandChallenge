@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setMainInterface() {
         
         let navigation = UINavigationController(
-            rootViewController: ViewController())
+            rootViewController: HomeViewController())
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
 

@@ -7,23 +7,47 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+final class HomeViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private var newsFeedTableView: UITableView!
+    @IBOutlet private var newsSearchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupTableView()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Methods
+    
+    private func setupTableView() {
+        
+        newsFeedTableView.delegate = self
+        newsFeedTableView.dataSource = self
     }
-    */
+}
 
+extension HomeViewController: UITableViewDelegate {
+    
+    
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            1
+        }
+    
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+                return UITableViewCell()
+            }
+            return cell
+        }
 }
