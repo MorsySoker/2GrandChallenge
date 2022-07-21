@@ -31,10 +31,14 @@ final class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - TableView Delegate
+
 extension HomeViewController: UITableViewDelegate {
     
     
 }
+
+// MARK: - TableView DataSource
 
 extension HomeViewController: UITableViewDataSource {
     
@@ -53,7 +57,7 @@ extension HomeViewController: UITableViewDataSource {
                         for: indexPath) as? NewsTableViewCell else {
                 fatalError("xib doesn't exist")
             }
-           
+            
             let artical = Article(
                 source: Source(id: "1", name: "Meroo"),
                 author: "Morsy",
