@@ -31,7 +31,7 @@ enum FilterdNewsEndPoint {
     func getURL() -> String {
         switch self {
         case .getArticlesWith(let keyword):
-            return "\(Enviroment.baseURL)everything?q=\(keyword)&apiKey=\(Enviroment.newsApiKey)"
+            return "\(Enviroment.baseURL)everything?q=\(keyword)&apiKey=\(Enviroment.newsApiKey)&page=2&language=fr"
         }
     }
     

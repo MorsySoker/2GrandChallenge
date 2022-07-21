@@ -14,20 +14,61 @@ final class HomeViewController: UIViewController {
     @IBOutlet private var newsFeedTableView: UITableView!
     @IBOutlet private var newsSearchBar: UISearchBar!
     
+    // MARK: - Properties
+    
+    private var presenter: HomePresenter?
+    
+    // MARK: - init
+    
+    init(presenter: HomePresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let presenter = presenter {
+            presenter.viewDelegate = self
+            presenter.getArticlesAbout(keyword: "bitcoin")
+        }
+    }
+    
     // MARK: - Methods
     
     private func setupTableView() {
         
+        newsFeedTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         newsFeedTableView.register(cellType: NewsTableViewCell.self)
         newsFeedTableView.delegate = self
         newsFeedTableView.dataSource = self
-        newsFeedTableView.reloadData()
+        newsFeedTableView.rowHeight = UITableView.automaticDimension
+        reloadTableView()
+    }
+}
+
+// MARK: - View Delegate
+
+extension HomeViewController: HomePresenterViewDelegate {
+    
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                self.newsFeedTableView.reloadData()
+            }
+        }
     }
 }
 
@@ -35,7 +76,17 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layoutIfNeeded()
+    }
 }
 
 // MARK: - TableView DataSource
@@ -45,7 +96,10 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-            10
+            guard let preseter = presenter else {
+                return 0
+            }
+            return preseter.getArticlesCount()
         }
     
     func tableView(
@@ -58,17 +112,11 @@ extension HomeViewController: UITableViewDataSource {
                 fatalError("xib doesn't exist")
             }
             
-            let artical = Article(
-                source: Source(id: "1", name: "Meroo"),
-                author: "Morsy",
-                title: "Morsy's legacy",
-                articleDescription: "baskdjhaskjdbaksjdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsbddasndbasmndbasdnbamsndbmasndbmansdbmansdbmansdbmansdbamnsdbmasndbm",
-                url: "",
-                urlToImage: "https://www.reuters.com/resizer/oiXutKfCRq-clmZjgSL4a2DvKq4=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/WN7VZDNMNRLC3FN2F327ABM3NY.jpg",
-                publishedAt: Date(),
-                content: "baskdjhaskjdbaksjdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsbddasndbasmndbasdnbamsndbmasndbmansdbmansdbmansdbmansdbamnsdbmasndbm")
+            guard let presenter = presenter else {
+                return newsCell
+            }
             
-            newsCell.article = artical
+            newsCell.article = presenter.getArticle(at: indexPath.row)
             
             return newsCell
         }

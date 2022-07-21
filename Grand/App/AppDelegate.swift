@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setMainInterface() {
         
         let navigation = UINavigationController(
-            rootViewController: HomeViewController())
+            rootViewController: HomeViewController(
+                presenter: HomePresenter(
+                    networkService: FilterdNewsService(
+                        networkServices: NetworkService()))))
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
 

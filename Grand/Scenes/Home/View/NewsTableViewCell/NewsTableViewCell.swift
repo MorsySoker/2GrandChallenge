@@ -50,7 +50,7 @@ final class NewsTableViewCell: UITableViewCell {
     private func setData(with article: Article) {
         
         articleImage.downloaded(from: article.urlToImage!)
-        articleSource.text = article.source?.name ?? "Unknown"
+        articleSource.text = article.source?.name?.uppercased() ?? "Unknown"
         articleDescription.text = article.articleDescription
         articlePublishedAt.text = ". 3 Hours ago"
         articleAuthor.text = article.author ?? "Unknown"
