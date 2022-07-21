@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1445A428896AB000B67DEF /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1445A328896AB000B67DEF /* UITableView+Extensions.swift */; };
 		1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82AF42888B2CC007B0C32 /* AppDelegate.swift */; };
 		1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82AFD2888B2D2007B0C32 /* Assets.xcassets */; };
 		1DB82B012888B2D2007B0C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82AFF2888B2D2007B0C32 /* LaunchScreen.storyboard */; };
@@ -14,9 +15,15 @@
 		1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82B102888B786007B0C32 /* HomeViewController.xib */; };
 		1DB82B162888BAE2007B0C32 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B142888BAE2007B0C32 /* NewsTableViewCell.swift */; };
 		1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82B152888BAE2007B0C32 /* NewsTableViewCell.xib */; };
+		1DB82B1A2888C25E007B0C32 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B192888C25E007B0C32 /* ArticleModel.swift */; };
+		1DB82B1F2888C42D007B0C32 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1B2888C42D007B0C32 /* UICollectionView+Extensions.swift */; };
+		1DB82B202888C42D007B0C32 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1C2888C42D007B0C32 /* UIViewController+Navigation.swift */; };
+		1DB82B212888C42D007B0C32 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1D2888C42D007B0C32 /* UIView+Extensions.swift */; };
+		1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1E2888C42D007B0C32 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D1445A328896AB000B67DEF /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		1DB82AF12888B2CC007B0C32 /* Grand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB82AF42888B2CC007B0C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DB82AFD2888B2D2007B0C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,6 +33,11 @@
 		1DB82B102888B786007B0C32 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		1DB82B142888BAE2007B0C32 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		1DB82B152888BAE2007B0C32 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		1DB82B192888C25E007B0C32 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		1DB82B1B2888C42D007B0C32 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		1DB82B1C2888C42D007B0C32 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		1DB82B1D2888C42D007B0C32 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		1DB82B1E2888C42D007B0C32 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,11 @@
 		1DB82B0C2888B6AC007B0C32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1DB82B1B2888C42D007B0C32 /* UICollectionView+Extensions.swift */,
+				1DB82B1E2888C42D007B0C32 /* UIImageView+Extensions.swift */,
+				1DB82B1D2888C42D007B0C32 /* UIView+Extensions.swift */,
+				1DB82B1C2888C42D007B0C32 /* UIViewController+Navigation.swift */,
+				1D1445A328896AB000B67DEF /* UITableView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -110,6 +127,7 @@
 		1DB82B0D2888B740007B0C32 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1DB82B182888C247007B0C32 /* Model */,
 				1DB82B0E2888B765007B0C32 /* View */,
 			);
 			path = Home;
@@ -132,6 +150,14 @@
 				1DB82B152888BAE2007B0C32 /* NewsTableViewCell.xib */,
 			);
 			path = NewsTableViewCell;
+			sourceTree = "<group>";
+		};
+		1DB82B182888C247007B0C32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DB82B192888C25E007B0C32 /* ArticleModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1445A428896AB000B67DEF /* UITableView+Extensions.swift in Sources */,
+				1DB82B212888C42D007B0C32 /* UIView+Extensions.swift in Sources */,
+				1DB82B202888C42D007B0C32 /* UIViewController+Navigation.swift in Sources */,
 				1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */,
 				1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */,
+				1DB82B1F2888C42D007B0C32 /* UICollectionView+Extensions.swift in Sources */,
+				1DB82B1A2888C25E007B0C32 /* ArticleModel.swift in Sources */,
+				1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */,
 				1DB82B162888BAE2007B0C32 /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

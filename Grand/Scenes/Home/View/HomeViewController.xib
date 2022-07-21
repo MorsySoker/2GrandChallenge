@@ -35,8 +35,8 @@
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0SQ-Ef-agq">
-                    <rect key="frame" x="0.0" y="184" width="414" height="678"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0SQ-Ef-agq">
+                    <rect key="frame" x="16" y="184" width="382" height="678"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -50,8 +50,8 @@
                 <constraint firstItem="GMe-yC-Z8A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rae-px-fH8"/>
                 <constraint firstItem="GMe-yC-Z8A" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="V0b-hI-cwi"/>
                 <constraint firstItem="GMe-yC-Z8A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XGJ-fk-8FM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0SQ-Ef-agq" secondAttribute="trailing" id="qCX-6B-6V1"/>
-                <constraint firstItem="0SQ-Ef-agq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vwJ-Gc-eKn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0SQ-Ef-agq" secondAttribute="trailing" constant="16" id="qCX-6B-6V1"/>
+                <constraint firstItem="0SQ-Ef-agq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vwJ-Gc-eKn"/>
                 <constraint firstItem="0SQ-Ef-agq" firstAttribute="top" secondItem="7se-IB-gPF" secondAttribute="bottom" constant="10" id="zob-QG-h8V"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

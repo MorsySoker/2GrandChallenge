@@ -24,8 +24,10 @@ final class HomeViewController: UIViewController {
     
     private func setupTableView() {
         
+        newsFeedTableView.register(cellType: NewsTableViewCell.self)
         newsFeedTableView.delegate = self
         newsFeedTableView.dataSource = self
+        newsFeedTableView.reloadData()
     }
 }
 
@@ -39,15 +41,31 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
-            1
+            10
         }
     
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-                return UITableViewCell()
+            guard let newsCell =
+                    tableView.dequeueReusableCell(
+                        withIdentifier: NewsTableViewCell.identifier,
+                        for: indexPath) as? NewsTableViewCell else {
+                fatalError("xib doesn't exist")
             }
-            return cell
+           
+            let artical = Article(
+                source: Source(id: "1", name: "Meroo"),
+                author: "Morsy",
+                title: "Morsy's legacy",
+                articleDescription: "baskdjhaskjdbaksjdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsbddasndbasmndbasdnbamsndbmasndbmansdbmansdbmansdbmansdbamnsdbmasndbm",
+                url: "",
+                urlToImage: "https://www.reuters.com/resizer/oiXutKfCRq-clmZjgSL4a2DvKq4=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/WN7VZDNMNRLC3FN2F327ABM3NY.jpg",
+                publishedAt: Date(),
+                content: "baskdjhaskjdbaksjdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsbddasndbasmndbasdnbamsndbmasndbmansdbmansdbmansdbmansdbamnsdbmasndbm")
+            
+            newsCell.article = artical
+            
+            return newsCell
         }
 }
