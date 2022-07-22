@@ -27,6 +27,9 @@
 		1DB82B202888C42D007B0C32 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1C2888C42D007B0C32 /* UIViewController+Navigation.swift */; };
 		1DB82B212888C42D007B0C32 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1D2888C42D007B0C32 /* UIView+Extensions.swift */; };
 		1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1E2888C42D007B0C32 /* UIImageView+Extensions.swift */; };
+		1DD0D436288B2B1200F5186F /* HeadLinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D434288B2B1200F5186F /* HeadLinesCell.swift */; };
+		1DD0D437288B2B1200F5186F /* HeadLinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD0D435288B2B1200F5186F /* HeadLinesCell.xib */; };
+		1DD0D439288B2D7100F5186F /* HeadLineCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D438288B2D7100F5186F /* HeadLineCellViewModel.swift */; };
 		1DE68A18288A254800A5DE91 /* DetailedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */; };
 		1DE68A19288A254800A5DE91 /* DetailedHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */; };
 		1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */; };
@@ -56,6 +59,9 @@
 		1DB82B1C2888C42D007B0C32 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		1DB82B1D2888C42D007B0C32 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		1DB82B1E2888C42D007B0C32 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		1DD0D434288B2B1200F5186F /* HeadLinesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesCell.swift; sourceTree = "<group>"; };
+		1DD0D435288B2B1200F5186F /* HeadLinesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLinesCell.xib; sourceTree = "<group>"; };
+		1DD0D438288B2D7100F5186F /* HeadLineCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLineCellViewModel.swift; sourceTree = "<group>"; };
 		1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHomeViewController.swift; sourceTree = "<group>"; };
 		1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedHomeViewController.xib; sourceTree = "<group>"; };
 		1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewController.swift; sourceTree = "<group>"; };
@@ -160,9 +166,9 @@
 		1DB82B092888B5FC007B0C32 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				1DE68A21288B271100A5DE91 /* HeadLines */,
 				1DB82B0D2888B740007B0C32 /* Home */,
 				1DE68A14288A250100A5DE91 /* Detailed Home */,
+				1DE68A21288B271100A5DE91 /* HeadLines */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -227,8 +233,18 @@
 			isa = PBXGroup;
 			children = (
 				1DB82B192888C25E007B0C32 /* ArticleModel.swift */,
+				1DD0D438288B2D7100F5186F /* HeadLineCellViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1DD0D43A288B307000F5186F /* HeadLine Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1DD0D434288B2B1200F5186F /* HeadLinesCell.swift */,
+				1DD0D435288B2B1200F5186F /* HeadLinesCell.xib */,
+			);
+			path = "HeadLine Cell";
 			sourceTree = "<group>";
 		};
 		1DE68A14288A250100A5DE91 /* Detailed Home */ = {
@@ -259,6 +275,7 @@
 		1DE68A22288B273800A5DE91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DD0D43A288B307000F5186F /* HeadLine Cell */,
 				1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */,
 				1DE68A24288B275100A5DE91 /* HeadLinesViewController.xib */,
 			);
@@ -324,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DB82B012888B2D2007B0C32 /* LaunchScreen.storyboard in Resources */,
+				1DD0D437288B2B1200F5186F /* HeadLinesCell.xib in Resources */,
 				1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */,
 				1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */,
 				1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */,
@@ -347,9 +365,11 @@
 				1DB82B202888C42D007B0C32 /* UIViewController+Navigation.swift in Sources */,
 				1D1445B428896F2700B67DEF /* Enviroment.swift in Sources */,
 				1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */,
+				1DD0D436288B2B1200F5186F /* HeadLinesCell.swift in Sources */,
 				1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */,
 				1DB82B1F2888C42D007B0C32 /* UICollectionView+Extensions.swift in Sources */,
 				1DB82B1A2888C25E007B0C32 /* ArticleModel.swift in Sources */,
+				1DD0D439288B2D7100F5186F /* HeadLineCellViewModel.swift in Sources */,
 				1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */,
 				1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */,
 				1D1445B528896F2700B67DEF /* Base.swift in Sources */,

@@ -40,3 +40,20 @@ struct Source: Codable {
     let id: String?
     let name: String?
 }
+
+extension ArticleStatus {
+    
+    func toHeadLineCellViewModel(indexPath: Int) -> HeadLineCellViewModel? {
+        guard let articles = articles else {
+            return nil
+        }
+        
+        let headLineCellViewModel = HeadLineCellViewModel(
+            imageURL: articles[indexPath].urlToImage ?? "",
+            title: articles[indexPath].title ?? "UnKnown",
+            auther: articles[indexPath].author ?? "Unknown",
+            articleURL: articles[indexPath].url ?? "")
+        
+        return headLineCellViewModel
+    }
+}

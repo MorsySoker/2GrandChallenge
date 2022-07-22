@@ -19,13 +19,14 @@ class HeadLinesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setCollectionView()
     }
     
     // MARK: - Methods
     
     private func setCollectionView() {
         
+        headLinesCollection.register(cellType: HeadLinesCell.self)
         headLinesCollection.delegate = self
         headLinesCollection.dataSource = self
         
@@ -44,11 +45,23 @@ extension HeadLinesViewController: UICollectionViewDelegate {
 
 extension HeadLinesViewController: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        0
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+        10
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let headlineCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: HeadLinesCell.identifier,
+            for: indexPath) as? HeadLinesCell else {
+                
+                fatalError("Couldn't dequeue Cell")
+            }
+            
+            return headlineCell
     }
 }
