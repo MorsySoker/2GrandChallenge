@@ -29,6 +29,8 @@
 		1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82B1E2888C42D007B0C32 /* UIImageView+Extensions.swift */; };
 		1DE68A18288A254800A5DE91 /* DetailedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */; };
 		1DE68A19288A254800A5DE91 /* DetailedHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */; };
+		1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */; };
+		1DE68A26288B275100A5DE91 /* HeadLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE68A24288B275100A5DE91 /* HeadLinesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		1DB82B1E2888C42D007B0C32 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHomeViewController.swift; sourceTree = "<group>"; };
 		1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedHomeViewController.xib; sourceTree = "<group>"; };
+		1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewController.swift; sourceTree = "<group>"; };
+		1DE68A24288B275100A5DE91 /* HeadLinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLinesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				1DB82B0C2888B6AC007B0C32 /* Extensions */,
 				1D1445A528896F0700B67DEF /* Service */,
 				1DB82B0A2888B67A007B0C32 /* Storyboard */,
+				1DB82B182888C247007B0C32 /* Model */,
 				1DB82B092888B5FC007B0C32 /* Scenes */,
 				1DB82B022888B2D2007B0C32 /* Info.plist */,
 			);
@@ -155,6 +160,7 @@
 		1DB82B092888B5FC007B0C32 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1DE68A21288B271100A5DE91 /* HeadLines */,
 				1DB82B0D2888B740007B0C32 /* Home */,
 				1DE68A14288A250100A5DE91 /* Detailed Home */,
 			);
@@ -193,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				1D3D7F962889DC1300887DAD /* Presenter */,
-				1DB82B182888C247007B0C32 /* Model */,
 				1DB82B0E2888B765007B0C32 /* View */,
 			);
 			path = Home;
@@ -239,6 +244,23 @@
 			children = (
 				1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */,
 				1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DE68A21288B271100A5DE91 /* HeadLines */ = {
+			isa = PBXGroup;
+			children = (
+				1DE68A22288B273800A5DE91 /* View */,
+			);
+			path = HeadLines;
+			sourceTree = "<group>";
+		};
+		1DE68A22288B273800A5DE91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */,
+				1DE68A24288B275100A5DE91 /* HeadLinesViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +327,7 @@
 				1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */,
 				1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */,
 				1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */,
+				1DE68A26288B275100A5DE91 /* HeadLinesViewController.xib in Resources */,
 				1DE68A19288A254800A5DE91 /* DetailedHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +351,7 @@
 				1DB82B1F2888C42D007B0C32 /* UICollectionView+Extensions.swift in Sources */,
 				1DB82B1A2888C25E007B0C32 /* ArticleModel.swift in Sources */,
 				1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */,
+				1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */,
 				1D1445B528896F2700B67DEF /* Base.swift in Sources */,
 				1D1445B328896F2700B67DEF /* NetworkService.swift in Sources */,
 				1D3D7F932889D65600887DAD /* FilterdNewsEndPoint.swift in Sources */,
