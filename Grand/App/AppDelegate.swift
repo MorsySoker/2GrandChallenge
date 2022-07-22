@@ -21,11 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setMainInterface() {
         
+        let mainVC = HomeViewController(
+            presenter: HomePresenter(
+                networkService: FilterdNewsService(
+                    networkServices: NetworkService())))
+        
+        let headlineVC = HeadLinesViewController()
+        
         let navigation = UINavigationController(
-            rootViewController: HomeViewController(
-                presenter: HomePresenter(
-                    networkService: FilterdNewsService(
-                        networkServices: NetworkService()))))
+            rootViewController: headlineVC)
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
 
