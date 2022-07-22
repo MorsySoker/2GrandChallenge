@@ -76,9 +76,21 @@ extension HeadLinesViewController: HeadLinesViewDelegate {
 
 extension HeadLinesViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath) {
         
-        print("shit")
+            guard let presenter = headlinesPresenter else {
+                
+                return
+            }
+            
+            
+            let headlinePageVC = HeadLinesWebPage(
+                webPageURL: presenter.getArticle(
+                    at: indexPath.row)?.articleURL ?? "www.google.com")
+            
+            present(headlinePageVC, animated: true)
     }
 }
 
