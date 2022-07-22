@@ -39,7 +39,7 @@ final class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         if let presenter = presenter {
             presenter.viewDelegate = self
             presenter.getArticlesAbout()
@@ -89,6 +89,18 @@ extension HomeViewController: HomePresenterViewDelegate {
 
 extension HomeViewController: UITableViewDelegate {
     
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath) {
+        
+            if let preseter = presenter {
+                let detailedArticle = DetailedHomeViewController()
+                detailedArticle.article = preseter.getArticle(
+                    at: indexPath.row)
+                pushVC(viewController: detailedArticle)
+            }
+    }
+    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -135,12 +147,13 @@ extension HomeViewController: UITableViewDataSource {
         }
 }
 
+// MARK: - SearchBar Delegate
+
 extension HomeViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         
         newsFeedTableView.isHidden = true
-        self.newsSearchBar.endEditing(true)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -158,7 +171,5 @@ extension HomeViewController: UISearchBarDelegate {
             }
             
             preseter.getArticlesAbout(keyword: searchText)
-            
-            
     }
 }
