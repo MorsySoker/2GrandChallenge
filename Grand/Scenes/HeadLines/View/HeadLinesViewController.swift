@@ -12,14 +12,38 @@ class HeadLinesViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private var headLinesCollection: UICollectionView!
-
+    
+    // MARK: - Properties
+    
+    private var headlinesPresenter: HeadLinesPresenter?
+    
+    // MARK: - init
+    
+    init(headlinesPresenter: HeadLinesPresenter) {
+        self.headlinesPresenter = headlinesPresenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let headlinesPresenter = headlinesPresenter {
+            
+            headlinesPresenter.headlinesDelegate = self
+            headlinesPresenter.getHeadlines()
+        }
     }
     
     // MARK: - Methods
@@ -30,8 +54,21 @@ class HeadLinesViewController: UIViewController {
         headLinesCollection.delegate = self
         headLinesCollection.dataSource = self
         
-        headLinesCollection.reloadData()
+        
         configureLayout()
+    }
+}
+
+
+extension HeadLinesViewController: HeadLinesViewDelegate {
+    
+    func reloadCollectionView() {
+        
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                self.headLinesCollection.reloadData()
+            }
+        }
     }
 }
 
@@ -53,30 +90,34 @@ extension HeadLinesViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             
-        10
-    }
+            guard let presenter = headlinesPresenter else {
+                
+                return 0
+            }
+            
+            return presenter.healinesCount()
+        }
     
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let headlineCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HeadLinesCell.identifier,
-            for: indexPath) as? HeadLinesCell else {
+            
+            guard let headlineCell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: HeadLinesCell.identifier,
+                for: indexPath) as? HeadLinesCell else {
                 
                 fatalError("Couldn't dequeue Cell")
             }
             
-            let model = HeadLineCellViewModel(
-                imageURL: "https://www.reuters.com/pf/resources/images/reuters/reuters-default.png?d=101",
-                title: "Morsyljkndaskjdaksjdbakjsdbakjsdbajksdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbjkasbdakjsdbakjsdbaksjdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsdbakjsbdkajsdbkajbsd",
-                auther: "Morsy",
-                articleURL: "")
+            guard let presenter = headlinesPresenter else {
+                
+                return headlineCell
+            }
             
-            headlineCell.article = model
+            headlineCell.article = presenter.getArticle(at: indexPath.row)
             
             return headlineCell
-    }
+        }
 }
 
 // MARK: - Layout Handling

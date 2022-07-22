@@ -26,7 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 networkService: FilterdNewsService(
                     networkServices: NetworkService())))
         
-        let headlineVC = HeadLinesViewController()
+        let headlineVC = HeadLinesViewController(
+            headlinesPresenter: HeadLinesPresenter(
+                headlineService: HeadLinesService()))
         
         let navigation = UINavigationController(
             rootViewController: headlineVC)
