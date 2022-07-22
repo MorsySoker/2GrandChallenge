@@ -20,10 +20,13 @@ final class FilterdNewsService {
     }
     
     func getArticlesWith(
-        keyword: String,
+        keyword: String = "bitcoin",
+        page: String = "1",
+        lang: String = "en",
         completion: @escaping (Result<ArticleStatus, NetworkError>) -> Void){
         let endPoint =
-        FilterdNewsEndPoint.getArticlesWith(keyword: keyword)
+        FilterdNewsEndPoint.getArticlesWith(
+            keyword: keyword, page: page , lang: lang)
         let request = endPoint.createRequest()
         networkServices.request(request, completion: completion)
     }

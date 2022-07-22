@@ -28,7 +28,7 @@ final class HomePresenter {
     
     // MARK: - Methods
     
-    func getArticlesAbout(keyword: String) {
+    func getArticlesAbout(keyword: String = "bitcoin") {
         
         networkService.getArticlesWith(keyword: keyword)
         { [weak self] result in
@@ -45,13 +45,12 @@ final class HomePresenter {
             }
         }
     }
-    
+
     func getArticlesCount() -> Int {
         
         guard let filterdArticles = filterdArticles else {
             return 0
         }
-        
         return filterdArticles.count
     }
     
@@ -59,7 +58,6 @@ final class HomePresenter {
         guard let filterdArticles = filterdArticles else {
             return nil
         }
-
         return filterdArticles[indexpath]
     }
 }

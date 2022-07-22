@@ -16,6 +16,7 @@ final class NewsTableViewCell: UITableViewCell {
     @IBOutlet private var articleDescription: UILabel!
     @IBOutlet private var articlePublishedAt: UILabel!
     @IBOutlet private var articleAuthor: UILabel!
+    @IBOutlet private var contanierView: UIView!
     
     // MARK: - Properties
     
@@ -41,8 +42,8 @@ final class NewsTableViewCell: UITableViewCell {
     
     private func setupViews() {
         
-        self.setBorder(borderWidth: 1, color: .systemGray2)
-        self.layer.cornerRadius = 10
+        contanierView.setBorder(borderWidth: 1, color: .systemGray2)
+        contanierView.layer.cornerRadius = 10
         articleImage.layer.cornerRadius = 10
         articleImage.clipsToBounds = true
     }
@@ -52,7 +53,7 @@ final class NewsTableViewCell: UITableViewCell {
         articleImage.downloaded(from: article.urlToImage!)
         articleSource.text = article.source?.name?.uppercased() ?? "Unknown"
         articleDescription.text = article.articleDescription
-        articlePublishedAt.text = ". 3 Hours ago"
+        articlePublishedAt.text = article.publishedAt
         articleAuthor.text = article.author ?? "Unknown"
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 enum FilterdNewsEndPoint {
     
-    case getArticlesWith(keyword: String)
+    case getArticlesWith(keyword: String, page: String, lang: String)
     
     var requestTimeOut: Int {
         20
@@ -30,8 +30,8 @@ enum FilterdNewsEndPoint {
     
     func getURL() -> String {
         switch self {
-        case .getArticlesWith(let keyword):
-            return "\(Enviroment.baseURL)everything?q=\(keyword)&apiKey=\(Enviroment.newsApiKey)&page=2&language=fr"
+        case .getArticlesWith(let keyword, let page, let lang):
+            return "\(Enviroment.baseURL)everything?q=\(keyword)&apiKey=\(Enviroment.newsApiKey)&page=\(page)&language=\(lang)"
         }
     }
     

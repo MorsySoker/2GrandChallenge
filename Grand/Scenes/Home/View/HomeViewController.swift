@@ -34,7 +34,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableView()
+        setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +42,17 @@ final class HomeViewController: UIViewController {
         
         if let presenter = presenter {
             presenter.viewDelegate = self
-            presenter.getArticlesAbout(keyword: "bitcoin")
+            presenter.getArticlesAbout()
         }
     }
     
     // MARK: - Methods
+    
+    private func setupViews() {
+        
+        setupTableView()
+        setupSearchBar()
+    }
     
     private func setupTableView() {
         
@@ -56,6 +62,13 @@ final class HomeViewController: UIViewController {
         newsFeedTableView.dataSource = self
         newsFeedTableView.rowHeight = UITableView.automaticDimension
         reloadTableView()
+    }
+    
+    private func setupSearchBar() {
+        
+        newsSearchBar.delegate = self
+        newsSearchBar.placeholder = "Enter a Topic Name"
+        newsSearchBar.searchBarStyle = .minimal
     }
 }
 
@@ -79,11 +92,11 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.layoutIfNeeded()
     }
@@ -120,4 +133,32 @@ extension HomeViewController: UITableViewDataSource {
             
             return newsCell
         }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+        newsFeedTableView.isHidden = true
+        self.newsSearchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        newsFeedTableView.isHidden = false
+        self.newsSearchBar.endEditing(true)
+    }
+    
+    func searchBar(
+        _ searchBar: UISearchBar,
+        textDidChange searchText: String) {
+            
+            guard let preseter = presenter else {
+                return
+            }
+            
+            preseter.getArticlesAbout(keyword: searchText)
+            
+            
+    }
 }
