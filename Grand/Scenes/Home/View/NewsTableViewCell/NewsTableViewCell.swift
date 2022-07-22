@@ -12,7 +12,6 @@ final class NewsTableViewCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet private var articleImage: UIImageView!
-    @IBOutlet private var articleSource: UILabel!
     @IBOutlet private var articleDescription: UILabel!
     @IBOutlet private var articlePublishedAt: UILabel!
     @IBOutlet private var articleAuthor: UILabel!
@@ -51,9 +50,8 @@ final class NewsTableViewCell: UITableViewCell {
     private func setData(with article: Article) {
         
         articleImage.downloaded(from: article.urlToImage!)
-        articleSource.text = article.source?.name?.uppercased() ?? "Unknown"
+        articleAuthor.text = article.author?.uppercased() ?? "Unknown"
         articleDescription.text = article.articleDescription
         articlePublishedAt.text = article.publishedAt
-        articleAuthor.text = article.author ?? "Unknown"
     }
 }
