@@ -30,6 +30,8 @@
 		1DD0D436288B2B1200F5186F /* HeadLinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D434288B2B1200F5186F /* HeadLinesCell.swift */; };
 		1DD0D437288B2B1200F5186F /* HeadLinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD0D435288B2B1200F5186F /* HeadLinesCell.xib */; };
 		1DD0D439288B2D7100F5186F /* HeadLineCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D438288B2D7100F5186F /* HeadLineCellViewModel.swift */; };
+		1DD0D43D288B37BF00F5186F /* HeadlinesEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D43C288B37BF00F5186F /* HeadlinesEndPoint.swift */; };
+		1DD0D43F288B386900F5186F /* HeadLinesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D43E288B386900F5186F /* HeadLinesService.swift */; };
 		1DE68A18288A254800A5DE91 /* DetailedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */; };
 		1DE68A19288A254800A5DE91 /* DetailedHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */; };
 		1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */; };
@@ -62,6 +64,8 @@
 		1DD0D434288B2B1200F5186F /* HeadLinesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesCell.swift; sourceTree = "<group>"; };
 		1DD0D435288B2B1200F5186F /* HeadLinesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLinesCell.xib; sourceTree = "<group>"; };
 		1DD0D438288B2D7100F5186F /* HeadLineCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLineCellViewModel.swift; sourceTree = "<group>"; };
+		1DD0D43C288B37BF00F5186F /* HeadlinesEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesEndPoint.swift; sourceTree = "<group>"; };
+		1DD0D43E288B386900F5186F /* HeadLinesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesService.swift; sourceTree = "<group>"; };
 		1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHomeViewController.swift; sourceTree = "<group>"; };
 		1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedHomeViewController.xib; sourceTree = "<group>"; };
 		1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		1D1445A628896F2700B67DEF /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				1DD0D43B288B36F000F5186F /* Headlines */,
 				1D3D7F912889D5B500887DAD /* Filterd News */,
 				1D1445AB28896F2700B67DEF /* Base */,
 			);
@@ -247,6 +252,15 @@
 			path = "HeadLine Cell";
 			sourceTree = "<group>";
 		};
+		1DD0D43B288B36F000F5186F /* Headlines */ = {
+			isa = PBXGroup;
+			children = (
+				1DD0D43C288B37BF00F5186F /* HeadlinesEndPoint.swift */,
+				1DD0D43E288B386900F5186F /* HeadLinesService.swift */,
+			);
+			path = Headlines;
+			sourceTree = "<group>";
+		};
 		1DE68A14288A250100A5DE91 /* Detailed Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,12 +376,14 @@
 				1D1445B628896F2700B67DEF /* NetworkRequest.swift in Sources */,
 				1DB82B212888C42D007B0C32 /* UIView+Extensions.swift in Sources */,
 				1D3D7F952889D8CA00887DAD /* FilterdNewsService.swift in Sources */,
+				1DD0D43F288B386900F5186F /* HeadLinesService.swift in Sources */,
 				1DB82B202888C42D007B0C32 /* UIViewController+Navigation.swift in Sources */,
 				1D1445B428896F2700B67DEF /* Enviroment.swift in Sources */,
 				1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */,
 				1DD0D436288B2B1200F5186F /* HeadLinesCell.swift in Sources */,
 				1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */,
 				1DB82B1F2888C42D007B0C32 /* UICollectionView+Extensions.swift in Sources */,
+				1DD0D43D288B37BF00F5186F /* HeadlinesEndPoint.swift in Sources */,
 				1DB82B1A2888C25E007B0C32 /* ArticleModel.swift in Sources */,
 				1DD0D439288B2D7100F5186F /* HeadLineCellViewModel.swift in Sources */,
 				1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */,
