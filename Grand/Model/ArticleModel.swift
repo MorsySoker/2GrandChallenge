@@ -41,18 +41,16 @@ struct Source: Codable {
     let name: String?
 }
 
-extension ArticleStatus {
+extension Article {
     
-    func toHeadLineCellViewModel(indexPath: Int) -> HeadLineCellViewModel? {
-        guard let articles = articles else {
-            return nil
-        }
+    func toHeadLineCellViewModel() -> HeadLineCellViewModel? {
+
         
         let headLineCellViewModel = HeadLineCellViewModel(
-            imageURL: articles[indexPath].urlToImage ?? "",
-            title: articles[indexPath].title ?? "UnKnown",
-            auther: articles[indexPath].author ?? "Unknown",
-            articleURL: articles[indexPath].url ?? "")
+            imageURL: urlToImage ?? "",
+            title: title ?? "UnKnown",
+            auther: author ?? "Unknown",
+            articleURL: url ?? "")
         
         return headLineCellViewModel
     }

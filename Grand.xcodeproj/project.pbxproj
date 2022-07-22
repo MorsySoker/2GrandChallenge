@@ -32,6 +32,7 @@
 		1DD0D439288B2D7100F5186F /* HeadLineCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D438288B2D7100F5186F /* HeadLineCellViewModel.swift */; };
 		1DD0D43D288B37BF00F5186F /* HeadlinesEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D43C288B37BF00F5186F /* HeadlinesEndPoint.swift */; };
 		1DD0D43F288B386900F5186F /* HeadLinesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D43E288B386900F5186F /* HeadLinesService.swift */; };
+		1DD0D442288B397F00F5186F /* HeadLinesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0D441288B397F00F5186F /* HeadLinesPresenter.swift */; };
 		1DE68A18288A254800A5DE91 /* DetailedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */; };
 		1DE68A19288A254800A5DE91 /* DetailedHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */; };
 		1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */; };
@@ -66,6 +67,7 @@
 		1DD0D438288B2D7100F5186F /* HeadLineCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLineCellViewModel.swift; sourceTree = "<group>"; };
 		1DD0D43C288B37BF00F5186F /* HeadlinesEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesEndPoint.swift; sourceTree = "<group>"; };
 		1DD0D43E288B386900F5186F /* HeadLinesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesService.swift; sourceTree = "<group>"; };
+		1DD0D441288B397F00F5186F /* HeadLinesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesPresenter.swift; sourceTree = "<group>"; };
 		1DE68A16288A254800A5DE91 /* DetailedHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHomeViewController.swift; sourceTree = "<group>"; };
 		1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedHomeViewController.xib; sourceTree = "<group>"; };
 		1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,14 @@
 			path = Headlines;
 			sourceTree = "<group>";
 		};
+		1DD0D440288B396E00F5186F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1DD0D441288B397F00F5186F /* HeadLinesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		1DE68A14288A250100A5DE91 /* Detailed Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +291,7 @@
 		1DE68A21288B271100A5DE91 /* HeadLines */ = {
 			isa = PBXGroup;
 			children = (
+				1DD0D440288B396E00F5186F /* Presenter */,
 				1DE68A22288B273800A5DE91 /* View */,
 			);
 			path = HeadLines;
@@ -384,6 +395,7 @@
 				1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */,
 				1DB82B1F2888C42D007B0C32 /* UICollectionView+Extensions.swift in Sources */,
 				1DD0D43D288B37BF00F5186F /* HeadlinesEndPoint.swift in Sources */,
+				1DD0D442288B397F00F5186F /* HeadLinesPresenter.swift in Sources */,
 				1DB82B1A2888C25E007B0C32 /* ArticleModel.swift in Sources */,
 				1DD0D439288B2D7100F5186F /* HeadLineCellViewModel.swift in Sources */,
 				1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */,
