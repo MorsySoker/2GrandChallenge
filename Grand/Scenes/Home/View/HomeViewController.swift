@@ -13,6 +13,7 @@ final class HomeViewController: UIViewController {
     
     @IBOutlet private var newsFeedTableView: UITableView!
     @IBOutlet private var newsSearchBar: UISearchBar!
+    @IBOutlet private var pageCountLabel: UILabel!
     
     // MARK: - Properties
     
@@ -50,6 +51,10 @@ final class HomeViewController: UIViewController {
     
     private func setupViews() {
         
+        if let presenter = presenter {
+            pageCountLabel.text = "Page: \(presenter.currentPage)"
+        }
+        
         setupTableView()
         setupSearchBar()
     }
@@ -69,6 +74,34 @@ final class HomeViewController: UIViewController {
         newsSearchBar.delegate = self
         newsSearchBar.placeholder = "Enter a Topic Name"
         newsSearchBar.searchBarStyle = .minimal
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction private func nextPagePressed() {
+        
+        if let presenter = presenter {
+            if presenter.currentPage <  Int(presenter.numberOfPages!) {
+                presenter.currentPage+=1
+                presenter.getArticlesAbout(
+                    keyword: presenter.searchKeyword,
+                    page: String(presenter.currentPage))
+                pageCountLabel.text = "Page: \(presenter.currentPage)"
+            }
+        }
+    }
+    
+    @IBAction private func previousPagePressed() {
+
+        if let presenter = presenter {
+            if presenter.currentPage > 1 {
+                presenter.currentPage-=1
+                presenter.getArticlesAbout(
+                    keyword: presenter.searchKeyword,
+                    page: String(presenter.currentPage))
+                pageCountLabel.text = "Page: \(presenter.currentPage)"
+            }
+        }
     }
 }
 
@@ -166,10 +199,12 @@ extension HomeViewController: UISearchBarDelegate {
         _ searchBar: UISearchBar,
         textDidChange searchText: String) {
             
-            guard let preseter = presenter else {
+            guard let presenter = presenter else {
                 return
             }
-            
-            preseter.getArticlesAbout(keyword: searchText)
+            presenter.searchKeyword = searchText
+            presenter.currentPage = 1
+            pageCountLabel.text = "Page: \(presenter.currentPage)"
+            presenter.getArticlesAbout(keyword: searchText)
     }
 }

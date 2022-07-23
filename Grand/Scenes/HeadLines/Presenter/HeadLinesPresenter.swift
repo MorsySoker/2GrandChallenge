@@ -31,9 +31,9 @@ final class HeadLinesPresenter {
     
     // MARK: - Methods
     
-    func getHeadlines() {
+    func getHeadlines(pageNumber: String = "1") {
         
-        headlineService.getHeadlines { [weak self] result in
+        headlineService.getHeadlines(page: pageNumber) { [weak self] result in
             
             guard let self = self else {
                 return
@@ -47,26 +47,6 @@ final class HeadLinesPresenter {
                 if let totalResults = articles.totalResults {
                     self.numberOfPages = (Double(totalResults)/10).rounded(.up)
                 }
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func getHeadlines(pageNumber: String) {
-        
-        headlineService.getHeadlines(page: pageNumber) { [weak self] result in
-            
-            guard let self = self else {
-                return
-            }
-            
-            switch result {
-                
-            case .success(let articles):
-                self.articles = articles.articles
-                self.headlinesDelegate.reloadCollectionView()
 
             case .failure(let error):
                 print(error.localizedDescription)

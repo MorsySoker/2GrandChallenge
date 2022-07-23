@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,39 +30,37 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOH-kd-R8s">
-                            <rect key="frame" x="373" y="13" width="25" height="31"/>
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <imageReference key="image" image="arrow.right" catalog="system" symbolScale="large"/>
-                            </state>
-                            <connections>
-                                <action selector="nextPagePressed" destination="-1" eventType="touchUpInside" id="fyE-Fp-pYm"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-V9-z31">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-V9-z31">
                             <rect key="frame" x="16" y="13" width="25" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="arrow.left" catalog="system">
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </state>
                             <connections>
-                                <action selector="previousPagePressed" destination="-1" eventType="touchUpInside" id="TOu-Ry-JVq"/>
+                                <action selector="previousPagePressed" destination="-1" eventType="touchUpInside" id="jdV-uG-2Rr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14z-Ts-k3F">
+                            <rect key="frame" x="373" y="13" width="25" height="31"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="arrow.right" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                            </state>
+                            <connections>
+                                <action selector="nextPagePressed" destination="-1" eventType="touchUpInside" id="BSF-cb-WBX"/>
                             </connections>
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="eOH-kd-R8s" secondAttribute="bottom" constant="12" id="Qb7-gc-8d8"/>
-                        <constraint firstAttribute="bottom" secondItem="4Vg-V9-z31" secondAttribute="bottom" constant="12" id="Sur-ps-Llp"/>
-                        <constraint firstItem="DwM-GZ-sGA" firstAttribute="centerY" secondItem="Hke-wp-29p" secondAttribute="centerY" id="UZg-eP-Vhj"/>
-                        <constraint firstAttribute="height" constant="56" id="VlC-ht-eYK"/>
-                        <constraint firstAttribute="trailing" secondItem="eOH-kd-R8s" secondAttribute="trailing" constant="16" id="dBW-AF-e94"/>
-                        <constraint firstItem="eOH-kd-R8s" firstAttribute="top" secondItem="Hke-wp-29p" secondAttribute="top" constant="13" id="lks-gm-U8V"/>
-                        <constraint firstItem="4Vg-V9-z31" firstAttribute="top" secondItem="Hke-wp-29p" secondAttribute="top" constant="13" id="noP-gE-AL3"/>
-                        <constraint firstItem="4Vg-V9-z31" firstAttribute="leading" secondItem="Hke-wp-29p" secondAttribute="leading" constant="16" id="rIo-Xe-K4x"/>
-                        <constraint firstItem="DwM-GZ-sGA" firstAttribute="centerX" secondItem="Hke-wp-29p" secondAttribute="centerX" id="u5j-mX-ZVg"/>
+                        <constraint firstItem="14z-Ts-k3F" firstAttribute="top" secondItem="Hke-wp-29p" secondAttribute="top" constant="13" id="5Ug-4c-mQo"/>
+                        <constraint firstAttribute="bottom" secondItem="14z-Ts-k3F" secondAttribute="bottom" constant="12" id="7F0-cB-VL5"/>
+                        <constraint firstItem="DwM-GZ-sGA" firstAttribute="centerX" secondItem="Hke-wp-29p" secondAttribute="centerX" id="CCt-Dw-HZC"/>
+                        <constraint firstAttribute="height" constant="56" id="OVE-1t-NRq"/>
+                        <constraint firstAttribute="trailing" secondItem="14z-Ts-k3F" secondAttribute="trailing" constant="16" id="RRc-wt-e4v"/>
+                        <constraint firstItem="DwM-GZ-sGA" firstAttribute="centerY" secondItem="Hke-wp-29p" secondAttribute="centerY" id="auT-ZY-cMD"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-Pn-fpl">
@@ -80,13 +77,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Hke-wp-29p" firstAttribute="top" secondItem="Wdf-Pn-fpl" secondAttribute="bottom" id="7nz-L2-MV0"/>
-                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9Ed-oV-98a"/>
-                <constraint firstItem="Hke-wp-29p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MAh-0d-BN0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Hke-wp-29p" secondAttribute="bottom" id="QnZ-kY-dc9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wdf-Pn-fpl" secondAttribute="trailing" id="nX1-G4-gf1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hke-wp-29p" secondAttribute="trailing" id="sJL-pN-brn"/>
-                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xve-70-nTc"/>
+                <constraint firstItem="Hke-wp-29p" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="D50-wo-STJ"/>
+                <constraint firstItem="Hke-wp-29p" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DPM-ZD-6SW"/>
+                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Fs1-Z3-ivo"/>
+                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KMy-xR-7ai"/>
+                <constraint firstItem="Hke-wp-29p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iJa-6D-1R0"/>
+                <constraint firstItem="Hke-wp-29p" firstAttribute="top" secondItem="Wdf-Pn-fpl" secondAttribute="bottom" id="kAU-2i-LxU"/>
+                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rd2-ax-2B5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="110"/>

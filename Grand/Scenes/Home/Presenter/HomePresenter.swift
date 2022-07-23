@@ -19,6 +19,9 @@ final class HomePresenter {
     private var filterdArticles: [Article]?
     private let networkService: FilterdNewsService
     weak var viewDelegate: HomePresenterViewDelegate!
+    var currentPage: Int = 1
+    var numberOfPages: Double?
+    var searchKeyword: String = "bitcoin"
     
     // MARK: - init
     
@@ -28,24 +31,31 @@ final class HomePresenter {
     
     // MARK: - Methods
     
-    func getArticlesAbout(keyword: String = "bitcoin") {
-        
-        networkService.getArticlesWith(keyword: keyword)
-        { [weak self] result in
-            guard let self = self else { return }
+    func getArticlesAbout(
+        keyword: String = "bitcoin",
+        page: String = "1") {
             
-            switch result {
+            networkService.getArticlesWith(
+                keyword: keyword,
+                page: page)
+            { [weak self] result in
+                guard let self = self else { return }
                 
-            case .success(let articals):
-                self.filterdArticles = articals.articles
-                self.viewDelegate.reloadTableView()
-                
-            case .failure(let error):
-                print(error.localizedDescription)
+                switch result {
+                    
+                case .success(let articles):
+                    self.filterdArticles = articles.articles
+                    self.viewDelegate.reloadTableView()
+                    if let totalResults = articles.totalResults {
+                        self.numberOfPages = (Double(totalResults)/10).rounded(.up)
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
         }
-    }
-
+    
     func getArticlesCount() -> Int {
         
         guard let filterdArticles = filterdArticles else {
