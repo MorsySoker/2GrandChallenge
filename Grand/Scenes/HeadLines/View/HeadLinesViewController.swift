@@ -12,6 +12,7 @@ class HeadLinesViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private var headLinesCollection: UICollectionView!
+    @IBOutlet private var pageCountLabel: UILabel!
     
     // MARK: - Properties
     
@@ -33,7 +34,7 @@ class HeadLinesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setCollectionView()
+        setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,17 +49,52 @@ class HeadLinesViewController: UIViewController {
     
     // MARK: - Methods
     
+    private func setupViews() {
+        
+        if let headlinesPresenter = headlinesPresenter {
+            pageCountLabel.text = "Page: \(headlinesPresenter.currentPage)"
+        }
+        
+        setCollectionView()
+    }
+    
     private func setCollectionView() {
         
         headLinesCollection.register(cellType: HeadLinesCell.self)
         headLinesCollection.delegate = self
         headLinesCollection.dataSource = self
         
-        
         configureLayout()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction private func nextPagePressed() {
+        
+        if let headlinesPresenter = headlinesPresenter {
+            if headlinesPresenter.currentPage <
+                Int(headlinesPresenter.numberOfPages!) {
+                
+                headlinesPresenter.currentPage+=1
+                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
+                pageCountLabel.text = "Page: \(headlinesPresenter.currentPage)"
+                
+            }
+        }
+    }
+    
+    @IBAction private func previousPagePressed() {
+        if let headlinesPresenter = headlinesPresenter {
+            if headlinesPresenter.currentPage > 1 {
+                headlinesPresenter.currentPage-=1
+                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
+                pageCountLabel.text = "Page: \(headlinesPresenter.currentPage)"
+            }
+        }
     }
 }
 
+// MARK: - View Delegate
 
 extension HeadLinesViewController: HeadLinesViewDelegate {
     
@@ -79,19 +115,18 @@ extension HeadLinesViewController: UICollectionViewDelegate {
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
-        
+            
             guard let presenter = headlinesPresenter else {
                 
                 return
             }
-            
             
             let headlinePageVC = HeadLinesWebPage(
                 webPageURL: presenter.getArticle(
                     at: indexPath.row)?.articleURL ?? "www.google.com")
             
             present(headlinePageVC, animated: true)
-    }
+        }
 }
 
 // MARK: - CollectionView DataSource

@@ -27,7 +27,7 @@ enum HeadlinesEndPoint {
     func getURL() -> String {
         switch self {
         case .getHeadLines(let page, let country):
-            return "https://newsapi.org/v2/top-headlines?apiKey=\(Enviroment.newsApiKey)&country=\(country)&page=\(page)"
+            return "https://newsapi.org/v2/top-headlines?apiKey=\(Enviroment.newsApiKey)&country=\(country)&page=\(page)&pageSize=10"
         }
     }
     

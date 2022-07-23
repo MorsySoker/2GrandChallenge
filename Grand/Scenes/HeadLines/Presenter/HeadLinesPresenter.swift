@@ -19,6 +19,8 @@ final class HeadLinesPresenter {
     private var articles: [Article]?
     private let headlineService: HeadLinesService
     weak var headlinesDelegate: HeadLinesViewDelegate!
+    var currentPage: Int = 1
+    var numberOfPages: Double?
     
     // MARK: - init
     
@@ -42,7 +44,30 @@ final class HeadLinesPresenter {
             case .success(let articles):
                 self.articles = articles.articles
                 self.headlinesDelegate.reloadCollectionView()
+                if let totalResults = articles.totalResults {
+                    self.numberOfPages = (Double(totalResults)/10).rounded(.up)
+                }
                 
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getHeadlines(pageNumber: String) {
+        
+        headlineService.getHeadlines(page: pageNumber) { [weak self] result in
+            
+            guard let self = self else {
+                return
+            }
+            
+            switch result {
+                
+            case .success(let articles):
+                self.articles = articles.articles
+                self.headlinesDelegate.reloadCollectionView()
+
             case .failure(let error):
                 print(error.localizedDescription)
             }
