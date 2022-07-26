@@ -12,8 +12,8 @@ class HeadLinesViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private weak var headLinesCollection: UICollectionView!
-    @IBOutlet private weak var pageCountLabel: UILabel!
     @IBOutlet private weak var activityIndicator: AppActivityIndicator!
+    @IBOutlet private weak var paginationController: PaginationController!
     
     // MARK: - Properties
     
@@ -53,9 +53,9 @@ class HeadLinesViewController: UIViewController {
     private func setupViews() {
         
         if let headlinesPresenter = headlinesPresenter {
-            pageCountLabel.text = "Page: \(headlinesPresenter.currentPage)"
+            paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
         }
-        
+        paginationController.delegate = self
         setCollectionView()
     }
     
@@ -67,34 +67,8 @@ class HeadLinesViewController: UIViewController {
         
         configureLayout()
     }
-    
-    // MARK: - Actions
-    
-    @IBAction private func nextPagePressed() {
-        
-        if let headlinesPresenter = headlinesPresenter {
-            if headlinesPresenter.currentPage <
-                Int(headlinesPresenter.numberOfPages!) {
-                
-                headlinesPresenter.currentPage+=1
-                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
-                pageCountLabel.text = "Page: \(headlinesPresenter.currentPage)"
-                
-            }
-        }
-    }
-    
-    @IBAction private func previousPagePressed() {
-        if let headlinesPresenter = headlinesPresenter {
-            if headlinesPresenter.currentPage > 1 {
-                headlinesPresenter.currentPage-=1
-                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
-                pageCountLabel.text = "Page: \(headlinesPresenter.currentPage)"
-            }
-        }
-    }
 }
-
+    
 // MARK: - View Delegate
 
 extension HeadLinesViewController: HeadLinesViewDelegate {
@@ -222,3 +196,34 @@ extension HeadLinesViewController {
             })
     }
 }
+
+// MARK: - Layout Handling
+
+extension HeadLinesViewController: PaginationControllerDelegate {
+    
+    func getNextPage() {
+        
+        if let headlinesPresenter = headlinesPresenter {
+            if headlinesPresenter.currentPage <
+                Int(headlinesPresenter.numberOfPages!) {
+                
+                headlinesPresenter.currentPage+=1
+                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
+                paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
+                
+            }
+        }
+    }
+    
+    func getPreviousPage() {
+        
+        if let headlinesPresenter = headlinesPresenter {
+            if headlinesPresenter.currentPage > 1 {
+                headlinesPresenter.currentPage-=1
+                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
+                paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
+            }
+        }
+    }
+}
+

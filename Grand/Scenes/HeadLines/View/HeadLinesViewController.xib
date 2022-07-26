@@ -12,8 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadLinesViewController" customModule="Grand" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="FRj-Ta-x7y" id="wDa-ax-lme"/>
-                <outlet property="headLinesCollection" destination="Wdf-Pn-fpl" id="K72-3D-cVw"/>
-                <outlet property="pageCountLabel" destination="DwM-GZ-sGA" id="Xpj-be-S3j"/>
+                <outlet property="headLinesCollection" destination="uPI-9b-uik" id="quA-LQ-Pee"/>
+                <outlet property="paginationController" destination="8cJ-Ls-eWy" id="e1d-c7-jWq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,52 +22,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hke-wp-29p">
-                    <rect key="frame" x="0.0" y="806" width="414" height="56"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwM-GZ-sGA">
-                            <rect key="frame" x="173.5" y="15.5" width="67" height="25.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-V9-z31">
-                            <rect key="frame" x="16" y="13" width="25" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="arrow.left" catalog="system">
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
-                            </state>
-                            <connections>
-                                <action selector="previousPagePressed" destination="-1" eventType="touchUpInside" id="jdV-uG-2Rr"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14z-Ts-k3F">
-                            <rect key="frame" x="373" y="13" width="25" height="31"/>
-                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="arrow.right" catalog="system">
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
-                            </state>
-                            <connections>
-                                <action selector="nextPagePressed" destination="-1" eventType="touchUpInside" id="BSF-cb-WBX"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="14z-Ts-k3F" firstAttribute="top" secondItem="Hke-wp-29p" secondAttribute="top" constant="13" id="5Ug-4c-mQo"/>
-                        <constraint firstAttribute="bottom" secondItem="14z-Ts-k3F" secondAttribute="bottom" constant="12" id="7F0-cB-VL5"/>
-                        <constraint firstItem="DwM-GZ-sGA" firstAttribute="centerX" secondItem="Hke-wp-29p" secondAttribute="centerX" id="CCt-Dw-HZC"/>
-                        <constraint firstAttribute="height" constant="56" id="OVE-1t-NRq"/>
-                        <constraint firstAttribute="trailing" secondItem="14z-Ts-k3F" secondAttribute="trailing" constant="16" id="RRc-wt-e4v"/>
-                        <constraint firstItem="DwM-GZ-sGA" firstAttribute="centerY" secondItem="Hke-wp-29p" secondAttribute="centerY" id="auT-ZY-cMD"/>
-                    </constraints>
-                </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-Pn-fpl">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uPI-9b-uik">
                     <rect key="frame" x="0.0" y="44" width="414" height="762"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YUf-qn-Dal">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mag-0Y-UB7">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -81,27 +39,32 @@
                         <constraint firstAttribute="width" constant="50" id="zbO-xm-ihB"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cJ-Ls-eWy" customClass="PaginationController" customModule="Grand" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="806" width="414" height="56"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="bmZ-1Q-xfj"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Hke-wp-29p" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="D50-wo-STJ"/>
-                <constraint firstItem="Hke-wp-29p" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DPM-ZD-6SW"/>
-                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Fs1-Z3-ivo"/>
-                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KMy-xR-7ai"/>
+                <constraint firstItem="8cJ-Ls-eWy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="1GR-u3-GKj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uPI-9b-uik" secondAttribute="trailing" id="7IT-h9-heI"/>
+                <constraint firstItem="8cJ-Ls-eWy" firstAttribute="top" secondItem="uPI-9b-uik" secondAttribute="bottom" id="7eU-ce-GMg"/>
+                <constraint firstItem="uPI-9b-uik" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gol-ZH-X25"/>
                 <constraint firstItem="FRj-Ta-x7y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WK3-MT-o63"/>
+                <constraint firstItem="8cJ-Ls-eWy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Y0H-36-3NS"/>
                 <constraint firstItem="FRj-Ta-x7y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gTD-Qe-cuh"/>
-                <constraint firstItem="Hke-wp-29p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iJa-6D-1R0"/>
-                <constraint firstItem="Hke-wp-29p" firstAttribute="top" secondItem="Wdf-Pn-fpl" secondAttribute="bottom" id="kAU-2i-LxU"/>
-                <constraint firstItem="Wdf-Pn-fpl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rd2-ax-2B5"/>
+                <constraint firstItem="8cJ-Ls-eWy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iNp-zd-Q0I"/>
+                <constraint firstItem="uPI-9b-uik" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yH4-ac-XCx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="139" y="110"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>
     </objects>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
