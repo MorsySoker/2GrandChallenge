@@ -123,6 +123,7 @@ extension HomeViewController: HomePresenterViewDelegate {
         DispatchQueue.main.async {
             UIView.performWithoutAnimation {
                 self.activityIndicator.startAnimating()
+                self.newsFeedTableView.isHidden = true
             }
         }
     }
@@ -132,6 +133,7 @@ extension HomeViewController: HomePresenterViewDelegate {
         DispatchQueue.main.async {
             UIView.performWithoutAnimation {
                 self.activityIndicator.stopAnimating()
+                self.newsFeedTableView.isHidden = false
             }
         }
     }

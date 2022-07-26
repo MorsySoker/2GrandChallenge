@@ -10,6 +10,8 @@ import Foundation
 protocol HeadLinesViewDelegate: AnyObject {
     
     func reloadCollectionView()
+    func startAnimating()
+    func stopAnimating()
 }
 
 final class HeadLinesPresenter {
@@ -34,7 +36,9 @@ final class HeadLinesPresenter {
     func getHeadlines(pageNumber: String = "1") {
         
         let country = (Lang(rawValue: UserUtilites.loadLang() ?? "english") ?? .english).getCountryFromLang()
-
+        
+        headlinesDelegate.startAnimating()
+        
         headlineService.getHeadlines(
             page: pageNumber,
             country: country)
@@ -52,9 +56,11 @@ final class HeadLinesPresenter {
                 if let totalResults = articles.totalResults {
                     self.numberOfPages = (Double(totalResults)/10).rounded(.up)
                 }
+                self.headlinesDelegate.stopAnimating()
 
             case .failure(let error):
                 print(error.localizedDescription)
+                self.headlinesDelegate.stopAnimating()
             }
         }
     }

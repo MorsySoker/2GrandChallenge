@@ -13,6 +13,7 @@ class HeadLinesViewController: UIViewController {
     
     @IBOutlet private weak var headLinesCollection: UICollectionView!
     @IBOutlet private weak var pageCountLabel: UILabel!
+    @IBOutlet private weak var activityIndicator: AppActivityIndicator!
     
     // MARK: - Properties
     
@@ -97,12 +98,29 @@ class HeadLinesViewController: UIViewController {
 // MARK: - View Delegate
 
 extension HeadLinesViewController: HeadLinesViewDelegate {
-    
+
     func reloadCollectionView() {
         
         DispatchQueue.main.async {
             UIView.performWithoutAnimation {
                 self.headLinesCollection.reloadData()
+            }
+        }
+    }
+    
+    func startAnimating() {
+        
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                self.activityIndicator.startAnimating()
+            }
+        }
+    }
+    
+    func stopAnimating() {
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                self.activityIndicator.stopAnimating()
             }
         }
     }

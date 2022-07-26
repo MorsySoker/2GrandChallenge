@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadLinesViewController" customModule="Grand" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="FRj-Ta-x7y" id="wDa-ax-lme"/>
                 <outlet property="headLinesCollection" destination="Wdf-Pn-fpl" id="K72-3D-cVw"/>
                 <outlet property="pageCountLabel" destination="DwM-GZ-sGA" id="Xpj-be-S3j"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -73,6 +74,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRj-Ta-x7y" customClass="AppActivityIndicator" customModule="Grand" customModuleProvider="target">
+                    <rect key="frame" x="182" y="423" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="fdI-vj-sqU"/>
+                        <constraint firstAttribute="width" constant="50" id="zbO-xm-ihB"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,6 +89,8 @@
                 <constraint firstItem="Hke-wp-29p" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DPM-ZD-6SW"/>
                 <constraint firstItem="Wdf-Pn-fpl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Fs1-Z3-ivo"/>
                 <constraint firstItem="Wdf-Pn-fpl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KMy-xR-7ai"/>
+                <constraint firstItem="FRj-Ta-x7y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WK3-MT-o63"/>
+                <constraint firstItem="FRj-Ta-x7y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gTD-Qe-cuh"/>
                 <constraint firstItem="Hke-wp-29p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iJa-6D-1R0"/>
                 <constraint firstItem="Hke-wp-29p" firstAttribute="top" secondItem="Wdf-Pn-fpl" secondAttribute="bottom" id="kAU-2i-LxU"/>
                 <constraint firstItem="Wdf-Pn-fpl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rd2-ax-2B5"/>
