@@ -11,11 +11,11 @@ final class NewsTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet private var articleImage: UIImageView!
-    @IBOutlet private var articleDescription: UILabel!
-    @IBOutlet private var articlePublishedAt: UILabel!
-    @IBOutlet private var articleAuthor: UILabel!
-    @IBOutlet private var contanierView: UIView!
+    @IBOutlet private weak var articleImage: UIImageView!
+    @IBOutlet private weak var articleDescription: UILabel!
+    @IBOutlet private weak var articlePublishedAt: UILabel!
+    @IBOutlet private weak var articleAuthor: UILabel!
+    @IBOutlet private weak var contanierView: UIView!
     
     // MARK: - Properties
     

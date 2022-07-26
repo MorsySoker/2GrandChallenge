@@ -10,6 +10,8 @@ import Foundation
 protocol HomePresenterViewDelegate: AnyObject {
     
     func reloadTableView()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }
 
 final class HomePresenter {
@@ -37,6 +39,8 @@ final class HomePresenter {
             
             let lang = (Lang(rawValue: UserUtilites.loadLang() ?? "english") ?? .english).urlLang()
             
+            viewDelegate.startActivityIndicator()
+            
             networkService.getArticlesWith(
                 keyword: keyword,
                 page: page,
@@ -52,9 +56,11 @@ final class HomePresenter {
                     if let totalResults = articles.totalResults {
                         self.numberOfPages = (Double(totalResults)/10).rounded(.up)
                     }
+                    self.viewDelegate.stopActivityIndicator()
                     
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self.viewDelegate.stopActivityIndicator()
                 }
             }
         }

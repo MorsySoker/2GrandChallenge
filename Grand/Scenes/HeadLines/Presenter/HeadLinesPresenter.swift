@@ -64,7 +64,6 @@ final class HeadLinesPresenter {
         guard let articles = articles else {
             return 0
         }
-
         return articles.count
     }
     

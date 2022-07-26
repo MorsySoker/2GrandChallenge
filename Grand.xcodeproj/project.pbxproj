@@ -15,6 +15,10 @@
 		1D3D7F932889D65600887DAD /* FilterdNewsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D7F922889D65600887DAD /* FilterdNewsEndPoint.swift */; };
 		1D3D7F952889D8CA00887DAD /* FilterdNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D7F942889D8CA00887DAD /* FilterdNewsService.swift */; };
 		1D3D7F982889DC4E00887DAD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D7F972889DC4E00887DAD /* HomePresenter.swift */; };
+		1D46D80B289064AF00448134 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1D46D80A289064AF00448134 /* NVActivityIndicatorView */; };
+		1D46D80D289064AF00448134 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 1D46D80C289064AF00448134 /* NVActivityIndicatorViewExtended */; };
+		1D46D81728906A4700448134 /* AppActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D46D81628906A4700448134 /* AppActivityIndicator.swift */; };
+		1D46D81928906A5500448134 /* AppActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D46D81828906A5500448134 /* AppActivityIndicator.xib */; };
 		1D5C4209288C29D3006CF4A3 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */; };
 		1DAB479A288DF33F0032802A /* UserUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB4799288DF33F0032802A /* UserUtilites.swift */; };
 		1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82AF42888B2CC007B0C32 /* AppDelegate.swift */; };
@@ -54,6 +58,8 @@
 		1D3D7F922889D65600887DAD /* FilterdNewsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterdNewsEndPoint.swift; sourceTree = "<group>"; };
 		1D3D7F942889D8CA00887DAD /* FilterdNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterdNewsService.swift; sourceTree = "<group>"; };
 		1D3D7F972889DC4E00887DAD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		1D46D81628906A4700448134 /* AppActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActivityIndicator.swift; sourceTree = "<group>"; };
+		1D46D81828906A5500448134 /* AppActivityIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppActivityIndicator.xib; sourceTree = "<group>"; };
 		1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
 		1DAB4799288DF33F0032802A /* UserUtilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUtilites.swift; sourceTree = "<group>"; };
 		1DB82AF12888B2CC007B0C32 /* Grand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D46D80B289064AF00448134 /* NVActivityIndicatorView in Frameworks */,
+				1D46D80D289064AF00448134 /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +151,23 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1D46D814289069EB00448134 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				1D46D815289069F700448134 /* App Activity Indicator */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		1D46D815289069F700448134 /* App Activity Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				1D46D81628906A4700448134 /* AppActivityIndicator.swift */,
+				1D46D81828906A5500448134 /* AppActivityIndicator.xib */,
+			);
+			path = "App Activity Indicator";
+			sourceTree = "<group>";
+		};
 		1D5C4207288C29BF006CF4A3 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +216,7 @@
 				1DB82B0B2888B689007B0C32 /* Resources */,
 				1DB82B0C2888B6AC007B0C32 /* Extensions */,
 				1D1445A528896F0700B67DEF /* Service */,
+				1D46D814289069EB00448134 /* CustomUI */,
 				1DB82B0A2888B67A007B0C32 /* Storyboard */,
 				1DB82B182888C247007B0C32 /* Model */,
 				1DB82B092888B5FC007B0C32 /* Scenes */,
@@ -397,6 +423,10 @@
 			dependencies = (
 			);
 			name = Grand;
+			packageProductDependencies = (
+				1D46D80A289064AF00448134 /* NVActivityIndicatorView */,
+				1D46D80C289064AF00448134 /* NVActivityIndicatorViewExtended */,
+			);
 			productName = Grand;
 			productReference = 1DB82AF12888B2CC007B0C32 /* Grand.app */;
 			productType = "com.apple.product-type.application";
@@ -425,6 +455,9 @@
 				Base,
 			);
 			mainGroup = 1DB82AE82888B2CC007B0C32;
+			packageReferences = (
+				1D46D809289064AF00448134 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+			);
 			productRefGroup = 1DB82AF22888B2CC007B0C32 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -443,6 +476,7 @@
 				1DD0D437288B2B1200F5186F /* HeadLinesCell.xib in Resources */,
 				1DF50D33288C6F0A002C6D5C /* WelcomeViewController.xib in Resources */,
 				1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */,
+				1D46D81928906A5500448134 /* AppActivityIndicator.xib in Resources */,
 				1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */,
 				1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */,
 				1DD0D448288B462500F5186F /* HeadLinesWebPage.xib in Resources */,
@@ -482,6 +516,7 @@
 				1D1445B528896F2700B67DEF /* Base.swift in Sources */,
 				1D1445B328896F2700B67DEF /* NetworkService.swift in Sources */,
 				1D3D7F932889D65600887DAD /* FilterdNewsEndPoint.swift in Sources */,
+				1D46D81728906A4700448134 /* AppActivityIndicator.swift in Sources */,
 				1DB82B162888BAE2007B0C32 /* NewsTableViewCell.swift in Sources */,
 				1D3D7F982889DC4E00887DAD /* HomePresenter.swift in Sources */,
 				1D5C4209288C29D3006CF4A3 /* AppTabBar.swift in Sources */,
@@ -696,6 +731,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D46D809289064AF00448134 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D46D80A289064AF00448134 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D46D809289064AF00448134 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		1D46D80C289064AF00448134 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D46D809289064AF00448134 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1DB82AE92888B2CC007B0C32 /* Project object */;
 }

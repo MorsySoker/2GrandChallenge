@@ -43,7 +43,7 @@ final class WelcomeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet private var langStackView: UIStackView!
+    @IBOutlet private weak var langStackView: UIStackView!
     private var isLangSelected: Bool = false
     
     override func viewDidLoad() {

@@ -12,7 +12,7 @@ final class HeadLinesWebPage: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet private var headlineWebPage: WKWebView!
+    @IBOutlet private weak var headlineWebPage: WKWebView!
     
     // MARK: - Properties
     

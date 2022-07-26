@@ -11,9 +11,9 @@ class HeadLinesCell: UICollectionViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet private var articleImage: UIImageView!
-    @IBOutlet private var articleAuthor: UILabel!
-    @IBOutlet private var articleTitle: UILabel!
+    @IBOutlet private weak var articleImage: UIImageView!
+    @IBOutlet private weak var articleAuthor: UILabel!
+    @IBOutlet private weak var articleTitle: UILabel!
     
     // MARK: - Properties
     

@@ -11,8 +11,8 @@ class HeadLinesViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet private var headLinesCollection: UICollectionView!
-    @IBOutlet private var pageCountLabel: UILabel!
+    @IBOutlet private weak var headLinesCollection: UICollectionView!
+    @IBOutlet private weak var pageCountLabel: UILabel!
     
     // MARK: - Properties
     

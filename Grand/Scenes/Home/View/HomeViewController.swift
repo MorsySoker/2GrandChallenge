@@ -11,9 +11,10 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet private var newsFeedTableView: UITableView!
-    @IBOutlet private var newsSearchBar: UISearchBar!
-    @IBOutlet private var pageCountLabel: UILabel!
+    @IBOutlet private weak var newsFeedTableView: UITableView!
+    @IBOutlet private weak var newsSearchBar: UISearchBar!
+    @IBOutlet private weak var pageCountLabel: UILabel!
+    @IBOutlet private weak var activityIndicator: AppActivityIndicator!
     
     // MARK: - Properties
     
@@ -108,11 +109,29 @@ final class HomeViewController: UIViewController {
 // MARK: - View Delegate
 
 extension HomeViewController: HomePresenterViewDelegate {
-    
+
     func reloadTableView() {
         DispatchQueue.main.async {
             UIView.performWithoutAnimation {
                 self.newsFeedTableView.reloadData()
+            }
+        }
+    }
+    
+    func startActivityIndicator() {
+        
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                self.activityIndicator.startAnimating()
+            }
+        }
+    }
+    
+    func stopActivityIndicator() {
+        
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                self.activityIndicator.stopAnimating()
             }
         }
     }

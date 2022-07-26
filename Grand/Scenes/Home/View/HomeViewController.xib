@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Grand" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="pTV-DJ-vTd" id="5pm-vE-KEg"/>
                 <outlet property="newsFeedTableView" destination="ul5-KU-DDm" id="Wws-Q5-ZY9"/>
                 <outlet property="newsSearchBar" destination="7se-IB-gPF" id="cGO-oo-1Lx"/>
                 <outlet property="pageCountLabel" destination="ih8-yH-gdO" id="D3P-MH-u70"/>
@@ -78,6 +79,13 @@
                     <rect key="frame" x="0.0" y="116" width="414" height="690"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTV-DJ-vTd" customClass="AppActivityIndicator" customModule="Grand" customModuleProvider="target">
+                    <rect key="frame" x="182" y="423" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Ccg-1r-guJ"/>
+                        <constraint firstAttribute="height" constant="50" id="u8Y-09-Cb5"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,12 +94,14 @@
                 <constraint firstItem="51y-Ot-0uR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="6db-bV-Q3d"/>
                 <constraint firstItem="51y-Ot-0uR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9LL-of-v7P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ul5-KU-DDm" secondAttribute="trailing" id="AkQ-As-PMx"/>
+                <constraint firstItem="pTV-DJ-vTd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CpQ-FD-o3P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7se-IB-gPF" secondAttribute="trailing" constant="16" id="F2G-hb-Mqa"/>
                 <constraint firstItem="7se-IB-gPF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ISc-7t-ju0"/>
                 <constraint firstItem="ul5-KU-DDm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TPw-qL-hUu"/>
                 <constraint firstItem="51y-Ot-0uR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UIs-C0-pt7"/>
                 <constraint firstItem="ul5-KU-DDm" firstAttribute="top" secondItem="7se-IB-gPF" secondAttribute="bottom" id="aGe-1Z-mTR"/>
                 <constraint firstItem="7se-IB-gPF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="ktL-9W-Xn2"/>
+                <constraint firstItem="pTV-DJ-vTd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xHk-IQ-0fE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
