@@ -13,8 +13,8 @@ final class HomeViewController: UIViewController {
     
     @IBOutlet private weak var newsFeedTableView: UITableView!
     @IBOutlet private weak var newsSearchBar: UISearchBar!
-    @IBOutlet private weak var pageCountLabel: UILabel!
     @IBOutlet private weak var activityIndicator: AppActivityIndicator!
+    @IBOutlet private weak var paginationController: PaginationController!
     
     // MARK: - Properties
     
@@ -53,9 +53,9 @@ final class HomeViewController: UIViewController {
     private func setupViews() {
         
         if let presenter = presenter {
-            pageCountLabel.text = "Page: \(presenter.currentPage)"
+            paginationController.changePageNumber(number: "\(presenter.currentPage)")
         }
-        
+        paginationController.delegate = self
         setupTableView()
         setupSearchBar()
     }
@@ -75,34 +75,6 @@ final class HomeViewController: UIViewController {
         newsSearchBar.delegate = self
         newsSearchBar.placeholder = "Enter a Topic Name"
         newsSearchBar.searchBarStyle = .minimal
-    }
-    
-    // MARK: - Actions
-    
-    @IBAction private func nextPagePressed() {
-        
-        if let presenter = presenter {
-            if presenter.currentPage <  Int(presenter.numberOfPages!) {
-                presenter.currentPage+=1
-                presenter.getArticlesAbout(
-                    keyword: presenter.searchKeyword,
-                    page: String(presenter.currentPage))
-                pageCountLabel.text = "Page: \(presenter.currentPage)"
-            }
-        }
-    }
-    
-    @IBAction private func previousPagePressed() {
-
-        if let presenter = presenter {
-            if presenter.currentPage > 1 {
-                presenter.currentPage-=1
-                presenter.getArticlesAbout(
-                    keyword: presenter.searchKeyword,
-                    page: String(presenter.currentPage))
-                pageCountLabel.text = "Page: \(presenter.currentPage)"
-            }
-        }
     }
 }
 
@@ -225,7 +197,38 @@ extension HomeViewController: UISearchBarDelegate {
             }
             presenter.searchKeyword = searchText
             presenter.currentPage = 1
-            pageCountLabel.text = "Page: \(presenter.currentPage)"
+            paginationController.changePageNumber(number: "\(presenter.currentPage)")
             presenter.getArticlesAbout(keyword: searchText)
+    }
+}
+
+// MARK: - Pagination Delegate
+
+extension HomeViewController: PaginationControllerDelegate {
+    
+    func getNextPage() {
+        
+        if let presenter = presenter {
+            if presenter.currentPage <  Int(presenter.numberOfPages!) {
+                presenter.currentPage+=1
+                presenter.getArticlesAbout(
+                    keyword: presenter.searchKeyword,
+                    page: String(presenter.currentPage))
+                paginationController.changePageNumber(number: "\(presenter.currentPage)")
+            }
+        }
+    }
+    
+    func getPreviousPage() {
+        
+        if let presenter = presenter {
+            if presenter.currentPage > 1 {
+                presenter.currentPage-=1
+                presenter.getArticlesAbout(
+                    keyword: presenter.searchKeyword,
+                    page: String(presenter.currentPage))
+                paginationController.changePageNumber(number: "\(presenter.currentPage)")
+            }
+        }
     }
 }
