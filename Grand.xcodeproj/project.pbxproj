@@ -16,6 +16,7 @@
 		1D3D7F952889D8CA00887DAD /* FilterdNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D7F942889D8CA00887DAD /* FilterdNewsService.swift */; };
 		1D3D7F982889DC4E00887DAD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D7F972889DC4E00887DAD /* HomePresenter.swift */; };
 		1D5C4209288C29D3006CF4A3 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */; };
+		1DAB479A288DF33F0032802A /* UserUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB4799288DF33F0032802A /* UserUtilites.swift */; };
 		1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82AF42888B2CC007B0C32 /* AppDelegate.swift */; };
 		1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82AFD2888B2D2007B0C32 /* Assets.xcassets */; };
 		1DB82B012888B2D2007B0C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB82AFF2888B2D2007B0C32 /* LaunchScreen.storyboard */; };
@@ -40,6 +41,8 @@
 		1DE68A19288A254800A5DE91 /* DetailedHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */; };
 		1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */; };
 		1DE68A26288B275100A5DE91 /* HeadLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE68A24288B275100A5DE91 /* HeadLinesViewController.xib */; };
+		1DF50D32288C6F0A002C6D5C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF50D30288C6F0A002C6D5C /* WelcomeViewController.swift */; };
+		1DF50D33288C6F0A002C6D5C /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF50D31288C6F0A002C6D5C /* WelcomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,7 @@
 		1D3D7F942889D8CA00887DAD /* FilterdNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterdNewsService.swift; sourceTree = "<group>"; };
 		1D3D7F972889DC4E00887DAD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
+		1DAB4799288DF33F0032802A /* UserUtilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUtilites.swift; sourceTree = "<group>"; };
 		1DB82AF12888B2CC007B0C32 /* Grand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB82AF42888B2CC007B0C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DB82AFD2888B2D2007B0C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		1DE68A17288A254800A5DE91 /* DetailedHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedHomeViewController.xib; sourceTree = "<group>"; };
 		1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewController.swift; sourceTree = "<group>"; };
 		1DE68A24288B275100A5DE91 /* HeadLinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLinesViewController.xib; sourceTree = "<group>"; };
+		1DF50D30288C6F0A002C6D5C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1DF50D31288C6F0A002C6D5C /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,22 @@
 			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
+		1DAB4797288DF3280032802A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1DAB4798288DF3300032802A /* UserUtilites */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1DAB4798288DF3300032802A /* UserUtilites */ = {
+			isa = PBXGroup;
+			children = (
+				1DAB4799288DF33F0032802A /* UserUtilites.swift */,
+			);
+			path = UserUtilites;
+			sourceTree = "<group>";
+		};
 		1DB82AE82888B2CC007B0C32 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +186,7 @@
 		1DB82AF32888B2CC007B0C32 /* Grand */ = {
 			isa = PBXGroup;
 			children = (
+				1DAB4797288DF3280032802A /* Core */,
 				1DB82B082888B5ED007B0C32 /* App */,
 				1DB82B0B2888B689007B0C32 /* Resources */,
 				1DB82B0C2888B6AC007B0C32 /* Extensions */,
@@ -187,6 +210,7 @@
 		1DB82B092888B5FC007B0C32 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1DF50D2E288C6EEA002C6D5C /* Welcome  */,
 				1D5C4207288C29BF006CF4A3 /* Tab Bar */,
 				1DB82B0D2888B740007B0C32 /* Home */,
 				1DE68A14288A250100A5DE91 /* Detailed Home */,
@@ -340,6 +364,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1DF50D2E288C6EEA002C6D5C /* Welcome  */ = {
+			isa = PBXGroup;
+			children = (
+				1DF50D2F288C6EF4002C6D5C /* View */,
+			);
+			path = "Welcome ";
+			sourceTree = "<group>";
+		};
+		1DF50D2F288C6EF4002C6D5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF50D30288C6F0A002C6D5C /* WelcomeViewController.swift */,
+				1DF50D31288C6F0A002C6D5C /* WelcomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,6 +441,7 @@
 			files = (
 				1DB82B012888B2D2007B0C32 /* LaunchScreen.storyboard in Resources */,
 				1DD0D437288B2B1200F5186F /* HeadLinesCell.xib in Resources */,
+				1DF50D33288C6F0A002C6D5C /* WelcomeViewController.xib in Resources */,
 				1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */,
 				1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */,
 				1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */,
@@ -423,6 +465,7 @@
 				1DB82B212888C42D007B0C32 /* UIView+Extensions.swift in Sources */,
 				1D3D7F952889D8CA00887DAD /* FilterdNewsService.swift in Sources */,
 				1DD0D43F288B386900F5186F /* HeadLinesService.swift in Sources */,
+				1DAB479A288DF33F0032802A /* UserUtilites.swift in Sources */,
 				1DB82B202888C42D007B0C32 /* UIViewController+Navigation.swift in Sources */,
 				1D1445B428896F2700B67DEF /* Enviroment.swift in Sources */,
 				1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */,
@@ -435,6 +478,7 @@
 				1DD0D439288B2D7100F5186F /* HeadLineCellViewModel.swift in Sources */,
 				1DB82B222888C42D007B0C32 /* UIImageView+Extensions.swift in Sources */,
 				1DE68A25288B275100A5DE91 /* HeadLinesViewController.swift in Sources */,
+				1DF50D32288C6F0A002C6D5C /* WelcomeViewController.swift in Sources */,
 				1D1445B528896F2700B67DEF /* Base.swift in Sources */,
 				1D1445B328896F2700B67DEF /* NetworkService.swift in Sources */,
 				1D3D7F932889D65600887DAD /* FilterdNewsEndPoint.swift in Sources */,

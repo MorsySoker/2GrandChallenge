@@ -35,9 +35,12 @@ final class HomePresenter {
         keyword: String = "bitcoin",
         page: String = "1") {
             
+            let lang = (Lang(rawValue: UserUtilites.loadLang() ?? "english") ?? .english).urlLang()
+            
             networkService.getArticlesWith(
                 keyword: keyword,
-                page: page)
+                page: page,
+                lang: lang)
             { [weak self] result in
                 guard let self = self else { return }
                 

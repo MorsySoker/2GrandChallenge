@@ -33,7 +33,12 @@ final class HeadLinesPresenter {
     
     func getHeadlines(pageNumber: String = "1") {
         
-        headlineService.getHeadlines(page: pageNumber) { [weak self] result in
+        let country = (Lang(rawValue: UserUtilites.loadLang() ?? "english") ?? .english).getCountryFromLang()
+
+        headlineService.getHeadlines(
+            page: pageNumber,
+            country: country)
+        { [weak self] result in
             
             guard let self = self else {
                 return

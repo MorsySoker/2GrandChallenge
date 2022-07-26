@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setMainInterface() {
         
-        let vc = AppCustomTabBarController()
+        let vc = WelcomeViewController()
         
         let navigation = UINavigationController(
             rootViewController: vc)
