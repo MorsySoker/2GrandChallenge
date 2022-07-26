@@ -21,6 +21,9 @@
 		1D46D81928906A5500448134 /* AppActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D46D81828906A5500448134 /* AppActivityIndicator.xib */; };
 		1D46D81C2890809200448134 /* PaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D46D81B2890809200448134 /* PaginationController.swift */; };
 		1D46D81E2890809B00448134 /* PaginationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D46D81D2890809B00448134 /* PaginationController.xib */; };
+		1D46D821289092DF00448134 /* HeadLineCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D46D820289092DF00448134 /* HeadLineCategories.swift */; };
+		1D46D823289092FC00448134 /* HeadLineCategories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D46D822289092FC00448134 /* HeadLineCategories.xib */; };
+		1D46D8262890956100448134 /* NibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D46D8252890956100448134 /* NibLoadingView.swift */; };
 		1D5C4209288C29D3006CF4A3 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */; };
 		1DAB479A288DF33F0032802A /* UserUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB4799288DF33F0032802A /* UserUtilites.swift */; };
 		1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82AF42888B2CC007B0C32 /* AppDelegate.swift */; };
@@ -64,6 +67,9 @@
 		1D46D81828906A5500448134 /* AppActivityIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppActivityIndicator.xib; sourceTree = "<group>"; };
 		1D46D81B2890809200448134 /* PaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
 		1D46D81D2890809B00448134 /* PaginationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaginationController.xib; sourceTree = "<group>"; };
+		1D46D820289092DF00448134 /* HeadLineCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLineCategories.swift; sourceTree = "<group>"; };
+		1D46D822289092FC00448134 /* HeadLineCategories.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLineCategories.xib; sourceTree = "<group>"; };
+		1D46D8252890956100448134 /* NibLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadingView.swift; sourceTree = "<group>"; };
 		1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
 		1DAB4799288DF33F0032802A /* UserUtilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUtilites.swift; sourceTree = "<group>"; };
 		1DB82AF12888B2CC007B0C32 /* Grand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +188,23 @@
 			path = "Pagination Controller";
 			sourceTree = "<group>";
 		};
+		1D46D81F289092B700448134 /* HeadLine Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1D46D820289092DF00448134 /* HeadLineCategories.swift */,
+				1D46D822289092FC00448134 /* HeadLineCategories.xib */,
+			);
+			path = "HeadLine Categories";
+			sourceTree = "<group>";
+		};
+		1D46D8242890954200448134 /* BaseUI */ = {
+			isa = PBXGroup;
+			children = (
+				1D46D8252890956100448134 /* NibLoadingView.swift */,
+			);
+			path = BaseUI;
+			sourceTree = "<group>";
+		};
 		1D5C4207288C29BF006CF4A3 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +216,7 @@
 		1DAB4797288DF3280032802A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1D46D8242890954200448134 /* BaseUI */,
 				1DAB4798288DF3300032802A /* UserUtilites */,
 			);
 			path = Core;
@@ -397,6 +421,7 @@
 		1DE68A22288B273800A5DE91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D46D81F289092B700448134 /* HeadLine Categories */,
 				1DD0D43A288B307000F5186F /* HeadLine Cell */,
 				1DE68A23288B275100A5DE91 /* HeadLinesViewController.swift */,
 				1DE68A24288B275100A5DE91 /* HeadLinesViewController.xib */,
@@ -493,6 +518,7 @@
 				1D46D81E2890809B00448134 /* PaginationController.xib in Resources */,
 				1D46D81928906A5500448134 /* AppActivityIndicator.xib in Resources */,
 				1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */,
+				1D46D823289092FC00448134 /* HeadLineCategories.xib in Resources */,
 				1DB82B122888B786007B0C32 /* HomeViewController.xib in Resources */,
 				1DD0D448288B462500F5186F /* HeadLinesWebPage.xib in Resources */,
 				1DE68A26288B275100A5DE91 /* HeadLinesViewController.xib in Resources */,
@@ -520,8 +546,10 @@
 				1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */,
 				1DD0D436288B2B1200F5186F /* HeadLinesCell.swift in Sources */,
 				1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */,
+				1D46D8262890956100448134 /* NibLoadingView.swift in Sources */,
 				1DB82B1F2888C42D007B0C32 /* UICollectionView+Extensions.swift in Sources */,
 				1DD0D43D288B37BF00F5186F /* HeadlinesEndPoint.swift in Sources */,
+				1D46D821289092DF00448134 /* HeadLineCategories.swift in Sources */,
 				1DD0D442288B397F00F5186F /* HeadLinesPresenter.swift in Sources */,
 				1DB82B1A2888C25E007B0C32 /* ArticleModel.swift in Sources */,
 				1D46D81C2890809200448134 /* PaginationController.swift in Sources */,
