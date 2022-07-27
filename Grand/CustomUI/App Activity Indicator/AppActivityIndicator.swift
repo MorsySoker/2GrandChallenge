@@ -8,47 +8,18 @@
 import UIKit
 import NVActivityIndicatorView
 
-class AppActivityIndicator: UIView {
+class AppActivityIndicator: NibLoadingView {
 
     // MARK: - Outlets
-    
-    @IBOutlet private var containerView: UIView!
+
     @IBOutlet private var activityIndicator: NVActivityIndicatorView!
-    
-    // MARK: - init
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        nibSetup()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        nibSetup()
-        
-    }
-    
+
     // MARK: - Methods
     
-    private func nibSetup() {
-        containerView = loadViewFromNib()
-        containerView.frame = bounds
-        containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        containerView.translatesAutoresizingMaskIntoConstraints = true
-
-        addSubview(containerView)
+    override func setupView() {
+        
         setupActivityIndicator()
     }
-
-    private func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
-        let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
-
-        return nibView
-    }
-
-    
     private func setupActivityIndicator() {
         
         activityIndicator.type = .pacman

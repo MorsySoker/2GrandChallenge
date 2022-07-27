@@ -226,7 +226,7 @@ extension HeadLinesViewController: PaginationControllerDelegate {
                 headlinesPresenter.currentPage-=1
                 headlinesPresenter.getHeadlines(
                     pageNumber: "\(headlinesPresenter.currentPage)",
-                    categoryType: headlinesPresenter.selectedCategoryType!)
+                    categoryType: headlinesPresenter.selectedCategoryType ?? "")
                 paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
             }
         }
