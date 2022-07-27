@@ -22,11 +22,14 @@ final class HeadLinesService {
     func getHeadlines(
         page: String = "1",
         country: String = "us",
+        category: String = "",
         completion: @escaping (Result<ArticleStatus, NetworkError>) -> Void){
-        let endPoint =
+            let endPoint =
             HeadlinesEndPoint.getHeadLines(
-                page: page, country: country)
-        let request = endPoint.createRequest()
-        networkServices.request(request, completion: completion)
-    }
+                page: page,
+                country: country,
+                category: category)
+            let request = endPoint.createRequest()
+            networkServices.request(request, completion: completion)
+        }
 }

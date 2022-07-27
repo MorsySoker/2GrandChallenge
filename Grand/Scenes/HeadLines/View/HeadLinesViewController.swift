@@ -13,6 +13,7 @@ class HeadLinesViewController: UIViewController {
     
     @IBOutlet private weak var headLinesCollection: UICollectionView!
     @IBOutlet private weak var activityIndicator: AppActivityIndicator!
+    @IBOutlet private weak var categoriesCollection: HeadLineCategories!
     @IBOutlet private weak var paginationController: PaginationController!
     
     // MARK: - Properties
@@ -55,6 +56,7 @@ class HeadLinesViewController: UIViewController {
         if let headlinesPresenter = headlinesPresenter {
             paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
         }
+        categoriesCollection.delegate = self
         paginationController.delegate = self
         setCollectionView()
     }
@@ -68,11 +70,11 @@ class HeadLinesViewController: UIViewController {
         configureLayout()
     }
 }
-    
+
 // MARK: - View Delegate
 
 extension HeadLinesViewController: HeadLinesViewDelegate {
-
+    
     func reloadCollectionView() {
         
         DispatchQueue.main.async {
@@ -208,7 +210,9 @@ extension HeadLinesViewController: PaginationControllerDelegate {
                 Int(headlinesPresenter.numberOfPages!) {
                 
                 headlinesPresenter.currentPage+=1
-                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
+                headlinesPresenter.getHeadlines(
+                    pageNumber: "\(headlinesPresenter.currentPage)",
+                    categoryType: headlinesPresenter.selectedCategoryType ?? "")
                 paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
                 
             }
@@ -220,9 +224,29 @@ extension HeadLinesViewController: PaginationControllerDelegate {
         if let headlinesPresenter = headlinesPresenter {
             if headlinesPresenter.currentPage > 1 {
                 headlinesPresenter.currentPage-=1
-                headlinesPresenter.getHeadlines(pageNumber: "\(headlinesPresenter.currentPage)")
+                headlinesPresenter.getHeadlines(
+                    pageNumber: "\(headlinesPresenter.currentPage)",
+                    categoryType: headlinesPresenter.selectedCategoryType!)
                 paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
             }
+        }
+    }
+}
+
+// MARK: - Layout Handling
+
+extension HeadLinesViewController: HeadLineCategoriesDelegate {
+    
+    func didSelect(category: String) {
+        
+        if let headlinesPresenter = headlinesPresenter {
+            
+            headlinesPresenter.selectedCategoryType = category
+            headlinesPresenter.currentPage = 1
+            paginationController.changePageNumber(number: "\(headlinesPresenter.currentPage)")
+            headlinesPresenter.getHeadlines(
+                pageNumber: "\(headlinesPresenter.currentPage)",
+                categoryType: category)
         }
     }
 }

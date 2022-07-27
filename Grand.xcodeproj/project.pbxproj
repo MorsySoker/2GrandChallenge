@@ -24,6 +24,8 @@
 		1D46D821289092DF00448134 /* HeadLineCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D46D820289092DF00448134 /* HeadLineCategories.swift */; };
 		1D46D823289092FC00448134 /* HeadLineCategories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D46D822289092FC00448134 /* HeadLineCategories.xib */; };
 		1D46D8262890956100448134 /* NibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D46D8252890956100448134 /* NibLoadingView.swift */; };
+		1D46D82A2890988400448134 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D46D8282890988400448134 /* CategoryCell.swift */; };
+		1D46D82B2890988400448134 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D46D8292890988400448134 /* CategoryCell.xib */; };
 		1D5C4209288C29D3006CF4A3 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */; };
 		1DAB479A288DF33F0032802A /* UserUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB4799288DF33F0032802A /* UserUtilites.swift */; };
 		1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB82AF42888B2CC007B0C32 /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 		1D46D820289092DF00448134 /* HeadLineCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLineCategories.swift; sourceTree = "<group>"; };
 		1D46D822289092FC00448134 /* HeadLineCategories.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLineCategories.xib; sourceTree = "<group>"; };
 		1D46D8252890956100448134 /* NibLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadingView.swift; sourceTree = "<group>"; };
+		1D46D8282890988400448134 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		1D46D8292890988400448134 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		1D5C4208288C29D3006CF4A3 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
 		1DAB4799288DF33F0032802A /* UserUtilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUtilites.swift; sourceTree = "<group>"; };
 		1DB82AF12888B2CC007B0C32 /* Grand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 		1D46D81F289092B700448134 /* HeadLine Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1D46D8272890986300448134 /* Category Cell */,
 				1D46D820289092DF00448134 /* HeadLineCategories.swift */,
 				1D46D822289092FC00448134 /* HeadLineCategories.xib */,
 			);
@@ -203,6 +208,15 @@
 				1D46D8252890956100448134 /* NibLoadingView.swift */,
 			);
 			path = BaseUI;
+			sourceTree = "<group>";
+		};
+		1D46D8272890986300448134 /* Category Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1D46D8282890988400448134 /* CategoryCell.swift */,
+				1D46D8292890988400448134 /* CategoryCell.xib */,
+			);
+			path = "Category Cell";
 			sourceTree = "<group>";
 		};
 		1D5C4207288C29BF006CF4A3 /* Tab Bar */ = {
@@ -515,6 +529,7 @@
 				1DD0D437288B2B1200F5186F /* HeadLinesCell.xib in Resources */,
 				1DF50D33288C6F0A002C6D5C /* WelcomeViewController.xib in Resources */,
 				1DB82AFE2888B2D2007B0C32 /* Assets.xcassets in Resources */,
+				1D46D82B2890988400448134 /* CategoryCell.xib in Resources */,
 				1D46D81E2890809B00448134 /* PaginationController.xib in Resources */,
 				1D46D81928906A5500448134 /* AppActivityIndicator.xib in Resources */,
 				1DB82B172888BAE2007B0C32 /* NewsTableViewCell.xib in Resources */,
@@ -544,6 +559,7 @@
 				1DB82B202888C42D007B0C32 /* UIViewController+Navigation.swift in Sources */,
 				1D1445B428896F2700B67DEF /* Enviroment.swift in Sources */,
 				1DB82AF52888B2CC007B0C32 /* AppDelegate.swift in Sources */,
+				1D46D82A2890988400448134 /* CategoryCell.swift in Sources */,
 				1DD0D436288B2B1200F5186F /* HeadLinesCell.swift in Sources */,
 				1DB82B112888B786007B0C32 /* HomeViewController.swift in Sources */,
 				1D46D8262890956100448134 /* NibLoadingView.swift in Sources */,

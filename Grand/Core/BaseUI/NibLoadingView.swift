@@ -36,6 +36,7 @@ class NibLoadingView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = true
 
         addSubview(view)
+        setupView() 
     }
 
     private func loadViewFromNib() -> UIView {
@@ -44,5 +45,9 @@ class NibLoadingView: UIView {
         let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
 
         return nibView
+    }
+    
+    func setupView() {
+        
     }
 }

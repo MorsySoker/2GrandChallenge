@@ -9,7 +9,7 @@ import Foundation
 
 enum HeadlinesEndPoint {
     
-    case getHeadLines(page: String, country: String)
+    case getHeadLines(page: String, country: String, category: String?)
     
     var httpMethod: HTTPMethod {
         switch self {
@@ -26,8 +26,8 @@ enum HeadlinesEndPoint {
     
     func getURL() -> String {
         switch self {
-        case .getHeadLines(let page, let country):
-            return "https://newsapi.org/v2/top-headlines?apiKey=\(Enviroment.newsApiKey)&country=\(country)&page=\(page)&pageSize=10"
+        case .getHeadLines(let page, let country, let category):
+            return "https://newsapi.org/v2/top-headlines?apiKey=\(Enviroment.newsApiKey)&country=\(country)&page=\(page)&pageSize=10&category=\(category ?? "")"
         }
     }
     

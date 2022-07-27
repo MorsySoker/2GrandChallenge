@@ -23,6 +23,7 @@ final class HeadLinesPresenter {
     weak var headlinesDelegate: HeadLinesViewDelegate!
     var currentPage: Int = 1
     var numberOfPages: Double?
+    var selectedCategoryType: String?
     
     // MARK: - init
     
@@ -33,37 +34,38 @@ final class HeadLinesPresenter {
     
     // MARK: - Methods
     
-    func getHeadlines(pageNumber: String = "1") {
-        
-        let country = (Lang(rawValue: UserUtilites.loadLang() ?? "english") ?? .english).getCountryFromLang()
-        
-        headlinesDelegate.startAnimating()
-        
-        headlineService.getHeadlines(
-            page: pageNumber,
-            country: country)
-        { [weak self] result in
+    func getHeadlines(
+        pageNumber: String = "1",
+        categoryType: String = "") {
             
-            guard let self = self else {
-                return
-            }
+            let country = (Lang(rawValue: UserUtilites.loadLang() ?? "english") ?? .english).getCountryFromLang()
             
-            switch result {
-                
-            case .success(let articles):
-                self.articles = articles.articles
-                self.headlinesDelegate.reloadCollectionView()
-                if let totalResults = articles.totalResults {
-                    self.numberOfPages = (Double(totalResults)/10).rounded(.up)
+            headlinesDelegate.startAnimating()
+            
+            headlineService.getHeadlines(
+                page: pageNumber,
+                country: country,
+                category: categoryType) { [weak self] result in
+                    
+                    guard let self = self else {
+                        return
+                    }
+                    
+                    switch result {
+                    case .success(let articles):
+                        self.articles = articles.articles
+                        self.headlinesDelegate.reloadCollectionView()
+                        if let totalResults = articles.totalResults {
+                            self.numberOfPages = (Double(totalResults)/10).rounded(.up)
+                        }
+                        self.headlinesDelegate.stopAnimating()
+                        
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        self.headlinesDelegate.stopAnimating()
+                    }
                 }
-                self.headlinesDelegate.stopAnimating()
-
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.headlinesDelegate.stopAnimating()
-            }
         }
-    }
     
     func healinesCount() -> Int {
         
